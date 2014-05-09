@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xdd56a1782733f65cc7962a4445163fe064d7a09fc60346333003e3454513757d");
+uint256 hashGenesisBlock("0xa105b93f8c52645945e13b4485e3110d71f3141a2981b0f4e957317893f7b90a");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Legendcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2779,21 +2779,21 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "2014年5月8日 GMT+8下午8:25:09";
+        const char* pszTimestamp = "LegendCoin LGC";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 50 * COIN;
+        txNew.vout[0].nValue = 1 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1399551909;
+        block.nTime    = 1399638115;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 385839198;
+        block.nNonce   = 388446624;
 
         if (fTestNet)
         {
@@ -2840,7 +2840,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x14eb3ad04371ebac86d199a7896ec68ffffcec4b23dc6511f21fac378e0fbe73"));
+        assert(block.hashMerkleRoot == uint256("0x04258111ffad5ce8fe2f329803762c0de427706e245fb116f8b06b3460a3f249"));
         block.print();
         assert(hash == hashGenesisBlock);
 
