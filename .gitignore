@@ -1,0 +1,34 @@
+src/*.exe
+src/legendcoin
+src/legendcoind
+src/test_legendcoin
+.*.swp
+*.*~*
+*.bak
+*.rej
+*.orig
+*.o
+*.patch
+.legendcoin
+
+# Compilation and Qt preprocessor part
+*.qm
+Makefile
+legendcoin-qt
+Legendcoin-Qt.app
+
+# Unit-tests
+Makefile.test
+legendcoin-qt_test
+
+# Resources cpp
+qrc_*.cpp
+
+# Qt creator
+*.pro.user
+
+# Mac specific
+.DS_Store
+build
+
+!src/leveldb*/Makefile
