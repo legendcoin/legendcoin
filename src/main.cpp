@@ -1092,8 +1092,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 120; // Legendcoin: 2 minute blocks
-static const int64 nTargetSpacing = 1 * 24 * 60 * 60; // Legendcoin: 1 days
+static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // Legendcoin: 1 days 
+static const int64 nTargetSpacing = 2*60; // Legendcoin: 2 minute blocks
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
